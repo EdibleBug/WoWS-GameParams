@@ -6,7 +6,7 @@ while 1:
   z = f.read(1)
   if not z:
     break
-  b.append(ord(z[0]))
+  b.append(z[0])
 
 f.close()
 f = open('GameParams.deflate', 'wb')
