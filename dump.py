@@ -3,6 +3,8 @@ import _pickle as pickle,codecs, json
 class GPEncode(json.JSONEncoder):
     def default(self, o):
         try:
+            for e in ['Cameras', 'DockCamera']:
+                o.__dict__.pop(e, o.__dict__)
             return o.__dict__
         except:
             return {}
