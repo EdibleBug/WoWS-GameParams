@@ -16,18 +16,19 @@ while 1:
 	if not z:
 		break
 	b.append(z[0])
-
 f.close()
+
 f = open('GameParams.deflate', 'wb')
 f.write(struct.pack('B'*len(b), *b[::-1]))
 f.close()
 
-params = open('GameParams.deflate', 'rb')
-dec = zlib.decompress(params.read())
-params.close()
-txt = open('GameParams.txt', 'wb')
-txt.write(dec)
-txt.close()
+f = open('GameParams.deflate', 'rb')
+dec = zlib.decompress(f.read())
+f.close()
+
+f = open('GameParams.txt', 'wb')
+f.write(dec)
+f.close()
 
 original = "GameParams.txt"
 destination = "GameParamsU8NB.txt"
