@@ -50,7 +50,10 @@ subdir = 'split'
 if not os.path.exists(subdir):
     os.makedirs(subdir)
 
-for x in list(d[0].keys()):
-    f = codecs.open(os.path.join(subdir, x + '.json'), 'w', encoding='latin1')
-    f.write(json.dumps(d[0][x], cls=GPEncode, sort_keys=True, indent=4, separators=(',', ': ')))
-    f.close()
+for elem in d:
+    if not isinstance(elem, dict):
+        continue
+    for x in list(elem.keys()):
+        f = codecs.open(os.path.join(subdir, x + '.json'), 'w', encoding='latin1')
+        f.write(json.dumps(elem[x], cls=GPEncode, sort_keys=True, indent=4, separators=(',', ': ')))
+        f.close()
