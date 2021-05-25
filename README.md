@@ -8,10 +8,10 @@ Any codes and materials created by me are under [MIT License](./LICENSE).
 
 ## Instruction
 1. Use Python 3.
-2. Legacy folder is outdated.
+2. Legacy folder is outdated, do not use.
 3. Extract GameParams.data into same folder.
     * OneFileToRuleThemAll.py
-        * Extracts into a huge JSON file with everything included.
+        * Extracts into a huge JSON file with everything included. This file is not intended for reading.
     * OneFileToSplitThemAll.py
         * Splits into many JSON files, with file name as key and value as content.
         * Example folder/file structure
@@ -20,11 +20,11 @@ Any codes and materials created by me are under [MIT License](./LICENSE).
             |__ sub
                |__ 0
                   |__ Ability
-                  |   |__ PCY001_CrashCrew.json
-                  |   |__ ...
+                  |  |__ PCY001_CrashCrew.json
+                  |  |__ ...
                   |__ Achievement
-                  |   |__ PCH001_DoubleKill.json
-                  |   |__ ...
+                  |  |__ PCH001_DoubleKill.json
+                  |  |__ ...
                   |__ ...
           ```
 
