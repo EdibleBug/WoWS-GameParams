@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 class GPEncode(json.JSONEncoder):
     def default(self, o):
         try:
-            for e in ['Cameras', 'DockCamera', 'damageDistribution']:
+            for e in ['Cameras', 'DockCamera', 'damageDistribution', 'salvoParams']:
                 o.__dict__.pop(e, o.__dict__)
             return o.__dict__
         except AttributeError:
